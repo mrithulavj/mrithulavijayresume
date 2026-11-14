@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mrithula Vijay Gnanadesikan | Portfolio</title>
+  <meta name="description" content="Mrithula Vijay Gnanadesikan: engineering, entrepreneurship, editorial design and student leadership." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #151515;
+      --bg-raised: #1d1d1d;
+      --line: #2e2e2e;
+      --line-soft: #242424;
+      --text: #f4f1ea;
+      --text-2: #d2cdc2;
+      --muted: #8f8a80;
+      --paper: #ece6d6;
+      --paper-cyan: #c4e4ee;
+      --paper-pink: #f1cdc4;
+      --paper-sand: #f3e5b8;
+      --ink: #1c1c1c;
+      --ink-2: #4b4740;
+      --blue: #1f46e0;
+      --blue-deep: #1733b0;
+      --yellow: #ffd60a;
+      --red: #e5362a;
+      --teal: #1f6f6a;
+      --teal-light: #3aa39b;
+      --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+      --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --wrap: min(1180px, 90vw);
+      --radius: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { width: var(--wrap); margin: 0 auto; }
+    section { padding: 6rem 0; border-top: 1px solid var(--line-soft); }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    h1, h2, h3, h4 { font-weight: 400; }
+
+    /* ---------- TOP BAR ---------- */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(21, 21, 21, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 1.5rem;
+    }
+    .topbar nav { display: flex; gap: 2rem; font-size: 0.92rem; color: var(--text-2); }
+    .topbar nav a { transition: color 0.2s; }
+    .topbar nav a:hover { color: #fff; }
+    .mark {
+      width: 42px;
+      height: 42px;
+      border: 1.25px solid var(--text-2);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .topbar .cta {
+      font-size: 0.9rem;
+      background: var(--yellow);
+      color: #111;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero { padding: 4.5rem 0 5rem; border-top: 0; }
+    .crumbs {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .crumbs span { margin: 0 0.5rem; opacity: 0.6; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 7.5vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: italic; color: #bfe3ef; }
+    .lede {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: var(--text-2);
+      max-width: 52ch;
+    }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.2rem;
+      flex-wrap: wrap;
+    }
+    .logo-chip {
+      background: #f7f4ec;
+      border-radius: 12px;
+      padding: 0.6rem 0.9rem;
+      display: flex;
+      align-items: center;
+      height: 62px;
+    }
+    .logo-chip img { height: 100%; width: auto; object-fit: contain; }
+    .actions { display: flex; gap: 0.75rem; margin-top: 2.2rem; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: transform 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .btn-primary { background: var(--yellow); color: #111; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-ghost { border: 1px solid #3c3c3c; color: var(--text); }
+    .btn-ghost:hover { border-color: var(--text-2); }
+    .btn-dot {
+      width: 52px;
+      height: 52px;
+      background: var(--red);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* Hero collage */
+    .collage { position: relative; height: 520px; }
+    .collage .paper {
+      position: absolute;
+      background: var(--paper);
+      padding: 0.7rem 0.7rem 2.4rem;
+      box-shadow: 0 24px 50px rgba(0,0,0,0.5);
+    }
+    .collage .paper img { width: 100%; height: 100%; object-fit: cover; }
+    .collage .main { top: 0; right: 0; width: 78%; height: 78%; transform: rotate(1.5deg); }
+    .collage .side { bottom: 4%; left: 0; width: 46%; height: 42%; transform: rotate(-4deg); background: var(--paper-cyan); }
+    .collage .slip {
+      position: absolute;
+      left: 4%;
+      top: 4%;
+      width: 40%;
+      background: var(--paper-cyan);
+      padding: 1rem 1.1rem;
+      transform: rotate(-3deg);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.45);
+      font-family: var(--mono);
+      color: #1a2c7a;
+    }
+    .collage .slip small { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+    .collage .slip strong { font-family: var(--serif); font-weight: 400; font-size: 1.9rem; color: #14246a; display: block; line-height: 1.1; margin: 0.3rem 0 0.5rem; }
+    .collage .slip span { font-size: 0.72rem; }
+    .callout {
+      position: absolute;
+      right: -2%;
+      bottom: 0;
+      width: 260px;
+      background: var(--blue);
+      border-radius: 18px;
+      padding: 1.4rem 1.4rem 1.5rem;
+      color: #fff;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+    .callout::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 2rem;
+      border: 9px solid transparent;
+      border-right-color: var(--blue);
+      border-left: 0;
+    }
+    .callout h3 { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .callout p { font-family: var(--mono); font-size: 0.8rem; line-height: 1.65; color: #e3e8ff; }
+    .callout .meta { font-family: var(--mono); font-size: 0.78rem; margin-top: 1rem; color: #c8d2ff; }
+
+    /* ---------- STATS ---------- */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 4.5rem;
+    }
+    .stat {
+      border-radius: var(--radius);
+      padding: 1.6rem 1.5rem 1.5rem;
+      color: var(--ink);
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stat strong { font-family: var(--serif); font-weight: 400; font-size: 3rem; line-height: 1; }
+    .stat span { font-family: var(--mono); font-size: 0.78rem; line-height: 1.5; color: var(--ink-2); margin-top: 0.8rem; }
+    .stat.s1 { background: var(--yellow); }
+    .stat.s2 { background: var(--paper-cyan); }
+    .stat.s3 { background: var(--paper-pink); }
+    .stat.s4 { background: var(--blue); color: #fff; }
+    .stat.s4 span { color: #d7dfff; }
+
+    /* ---------- ABOUT ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-grid h2 { font-family: var(--serif); font-size: clamp(2.4rem, 4.5vw, 3.6rem); line-height: 1.02; }
+    .about-grid h2 em { color: var(--yellow); font-style: italic; }
+    .about-grid p {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--text-2);
+      line-height: 1.8;
+    }
+    .about-grid p + p { margin-top: 1.2rem; }
+    .teal-strip {
+      margin-top: 2.5rem;
+      background: var(--teal);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: #e5f6f3;
+    }
+    .teal-strip .dial {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 3px solid #bfeee6;
+      border-top-color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    /* ---------- LEADERSHIP ---------- */
+    .leadership-intro {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      line-height: 1.02;
+      max-width: 20ch;
+      margin-bottom: 3.5rem;
+    }
+    .leaders { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .leader {
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s;
+      background: var(--bg-raised);
+      border: 1px solid var(--line);
+    }
+    .leader:hover { transform: translateY(-3px); }
+    .leader.featured {
+      grid-column: span 2;
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .leader.featured .leader-body { display: flex; flex-direction: column; }
+    .leader.paper { background: var(--paper); color: var(--ink); border: 0; }
+    .leader.paper.cyan { background: var(--paper-cyan); }
+    .leader.paper.pink { background: var(--paper-pink); }
+    .leader.paper.sand { background: var(--paper-sand); }
+    .leader.paper.paper-tilt-l { transform: rotate(-0.6deg); }
+    .leader.paper.paper-tilt-r { transform: rotate(0.5deg); }
+    .leader.paper.paper-tilt-l:hover, .leader.paper.paper-tilt-r:hover { transform: rotate(0) translateY(-4px); }
+    .leader-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .leader-when {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 0.3rem;
+    }
+    .leader.paper .leader-when { color: var(--ink-2); }
+    .leader.featured .leader-when { color: #c8d2ff; }
+    .leader h3 { font-family: var(--serif); font-size: 2rem; line-height: 1.08; }
+    .leader .org { font-size: 0.92rem; color: var(--text-2); margin-top: 0.3rem; }
+    .leader.paper .org { color: var(--ink-2); }
+    .leader.featured .org { color: #dfe5ff; }
+    .leader ul {
+      list-style: none;
+      margin-top: auto;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 0.6rem;
+    }
+    .leader.paper ul { border-top-color: #c1b9a6; }
+    .leader.featured ul { border-top-color: rgba(255,255,255,0.28); }
+    .leader li {
+      font-size: 0.92rem;
+      color: var(--text-2);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .leader li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+    .leader.paper li { color: var(--ink-2); }
+    .leader.featured li { color: #e6ebff; }
+    .leader.featured li::before { background: var(--yellow); }
+    .metric {
+      font-family: var(--serif);
+      font-size: 4.2rem;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 0.7rem;
+    }
+    .metric small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: #c8d2ff;
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
+    .leader.featured .photo {
+      border-radius: 10px;
+      overflow: hidden;
+      transform: rotate(1.5deg);
+      background: #fff;
+      padding: 0.4rem 0.4rem 1.6rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .leader.featured .photo img { width: 100%; height: 260px; object-fit: cover; }
+    .leader.featured .photo figcaption {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: #222;
+      padding: 0.6rem 0.3rem 0;
+    }
+    .photo-card {
+      margin-top: 1.4rem;
+      background: #fff;
+      padding: 0.45rem 0.45rem 1.5rem;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+    }
+    .photo-card img { width: 100%; height: 190px; object-fit: cover; }
+    .photo-card figcaption {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-2);
+      padding: 0.5rem 0.3rem 0;
+    }
+
+    /* ---------- WORK ---------- */
+    .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem 1.8rem; }
+    .card {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 1.5rem 1.5rem 1.7rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .card.cyan { background: var(--paper-cyan); }
+    .card.pink { background: var(--paper-pink); }
+    .card.sand { background: var(--paper-sand); }
+    .card:nth-child(3n+1) { transform: rotate(-0.8deg); }
+    .card:nth-child(3n+2) { transform: rotate(0.5deg); }
+    .card:nth-child(3n+3) { transform: rotate(-0.3deg); }
+    .card:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 26px 50px rgba(0,0,0,0.5); }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      border-bottom: 1px solid #bfb7a4;
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.1rem;
+    }
+    .card h3 { font-family: var(--serif); font-size: 1.95rem; line-height: 1.08; margin-bottom: 0.6rem; }
+    .card p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.6; }
+    .card img { width: 100%; height: 150px; object-fit: cover; margin-bottom: 1rem; }
+    .tags { margin-top: auto; padding-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tags span {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      padding: 0.15rem 0.6rem;
+    }
+    .card .stamp {
+      align-self: flex-start;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: #b63a2c;
+      border: 1.5px solid #b63a2c;
+      padding: 0.2rem 0.55rem;
+      transform: rotate(-4deg);
+    }
+
+    /* ---------- GALLERY ---------- */
+    .gallery-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 3.2rem;
+    }
+    .gallery-title-wrap { position: relative; }
+    .gallery-kicker {
+      font-family: var(--mono);
+      color: var(--yellow);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .gallery-title {
+      max-width: 15ch;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5.2vw, 4.7rem);
+      line-height: 0.96;
+    }
+    .gallery-title em { color: var(--yellow); font-weight: 400; }
+    .gallery-doodle {
+      position: absolute;
+      width: 68px;
+      height: 68px;
+      top: -0.8rem;
+      right: -5.2rem;
+      color: var(--red);
+      transform: rotate(12deg);
+    }
+    .gallery-sticker {
+      position: relative;
+      flex: 0 0 auto;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      background: var(--paper-pink);
+      color: #84281f;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+      transform: rotate(8deg);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      line-height: 1.5;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .gallery-sticker::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 26px;
+      top: -12px;
+      left: calc(50% - 9px);
+      background: radial-gradient(circle at 35% 28%, #ffb18f, var(--red) 52%, #8f1512 56%);
+      clip-path: polygon(0 0, 100% 0, 100% 58%, 50% 100%, 0 58%);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35));
+    }
+    .gallery-sticker strong { font-size: 1.05rem; font-weight: 500; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 160px;
+      gap: 1rem;
+    }
+    .g {
+      background: #fff;
+      padding: 0.4rem 0.4rem 1.4rem;
+      position: relative;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .g::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      width: 17px;
+      height: 24px;
+      top: -12px;
+      left: 50%;
+      background: radial-gradient(circle at 35% 28%, #ffb18f, var(--red) 52%, #8f1512 56%);
+      clip-path: polygon(0 0, 100% 0, 100% 58%, 50% 100%, 0 58%);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35));
+    }
+    .g::after {
+      content: attr(data-index);
+      position: absolute;
+      z-index: 1;
+      top: 0.72rem;
+      left: 0.72rem;
+      padding: 0.25rem 0.42rem;
+      background: var(--paper-sand);
+      color: #58430b;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      line-height: 1;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transform: rotate(-7deg);
+    }
+    .g img { width: 100%; height: 100%; object-fit: cover; }
+    .g figcaption {
+      position: absolute;
+      left: 0.6rem;
+      bottom: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: #222;
+    }
+    .g.a { grid-column: span 5; grid-row: span 2; transform: rotate(-1deg); }
+    .g.b { grid-column: span 4; grid-row: span 2; transform: rotate(0.8deg); background: var(--yellow); }
+    .g.c { grid-column: span 3; grid-row: span 1; transform: rotate(-0.5deg); background: var(--paper-cyan); }
+    .g.d { grid-column: span 3; grid-row: span 1; transform: rotate(0.6deg); background: var(--paper-pink); }
+    .g.e { grid-column: span 4; grid-row: span 2; transform: rotate(-0.6deg); }
+    .g.f { grid-column: span 4; grid-row: span 2; transform: rotate(0.5deg); }
+    .g.g { grid-column: span 4; grid-row: span 2; transform: rotate(-0.4deg); background: var(--paper-cyan); }
+    .g:hover { transform: rotate(0) translateY(-5px); box-shadow: 0 24px 42px rgba(0,0,0,0.45); z-index: 3; }
+
+    /* ---------- CERTIFICATIONS ---------- */
+    .slips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .slip-card {
+      background: var(--paper-cyan);
+      color: #17286e;
+      padding: 1.3rem 1.4rem 1.4rem;
+      border-top: 6px solid var(--blue);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+      font-family: var(--mono);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .slip-card.y { background: var(--paper-sand); color: #5a4300; border-top-color: #d9a500; }
+    .slip-card.p { background: var(--paper-pink); color: #6e2418; border-top-color: var(--red); }
+    .slip-card.t { background: #cfe9e4; color: #124e49; border-top-color: var(--teal); }
+    .slip-card .issuer { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; }
+    .slip-card h4 { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; line-height: 1.15; color: inherit; }
+    .slip-card .date { font-size: 0.74rem; opacity: 0.85; }
+    .slip-card .id { font-size: 0.7rem; opacity: 0.7; }
+    .slip-card a {
+      margin-top: auto;
+      padding-top: 0.6rem;
+      font-size: 0.74rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ---------- EXPERIENCE ---------- */
+    .timeline { border-top: 1px solid var(--line); }
+    .row {
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr;
+      gap: 2rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .row .when { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); }
+    .row h4 { font-family: var(--serif); font-size: 1.7rem; line-height: 1.15; }
+    .row .org { font-size: 0.95rem; color: var(--text-2); margin-top: 0.2rem; }
+    .row .where { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+    .row .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact-card {
+      background: var(--blue);
+      border-radius: 24px;
+      padding: clamp(2.5rem, 6vw, 5rem);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: var(--yellow);
+      opacity: 0.9;
+    }
+    .contact-card > * { position: relative; z-index: 1; }
+    .contact-card h2 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1; }
+    .contact-card h2 em { color: var(--yellow); font-style: italic; }
+    .contact-card p { color: #dfe5ff; margin-top: 1rem; max-width: 40ch; }
+    .links { display: grid; gap: 0.75rem; }
+    .links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      padding: 1rem 1.25rem;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .links a::after { content: "\2197"; font-family: var(--sans); }
+    .links a:hover { background: #fff; color: #111; }
+
+    footer {
+      padding: 2rem 0 3rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 960px) {
+      .hero-grid, .about-grid, .contact-card { grid-template-columns: 1fr; gap: 2.5rem; }
+      .collage { height: 460px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .work { grid-template-columns: repeat(2, 1fr); }
+      .slips { grid-template-columns: repeat(2, 1fr); }
+      .leaders { grid-template-columns: 1fr; }
+      .leader.featured { grid-column: auto; grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+      .g.a, .g.b, .g.c, .g.d, .g.e, .g.f, .g.g { grid-column: span 1; grid-row: span 1; }
+      .gallery-doodle { right: -4.5rem; width: 56px; height: 56px; }
+      .topbar nav a:not(.keep) { display: none; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 4.5rem 0; }
+      .topbar nav { display: none; }
+      .collage { height: 420px; }
+      .callout { width: 200px; padding: 1rem; }
+      .work, .slips { grid-template-columns: 1fr; }
+      .card:nth-child(n) { transform: rotate(0); }
+      .card:hover { transform: translateY(-4px); }
+      .gallery-intro { align-items: flex-start; gap: 1rem; margin-bottom: 2.5rem; }
+      .gallery-title { max-width: 12ch; font-size: clamp(2.7rem, 12vw, 3.7rem); }
+      .gallery-doodle { width: 42px; height: 42px; top: -0.65rem; right: -2.5rem; }
+      .gallery-sticker { width: 82px; height: 82px; font-size: 0.52rem; }
+      .gallery-sticker strong { font-size: 0.82rem; }
+      .gallery { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .stat strong { font-size: 2.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="#top" class="mark" aria-label="Back to top">mv</a>
+      <nav aria-label="Primary">
+        <a href="#leadership">Leadership</a>
+        <a href="#work">Work</a>
+        <a href="#gallery">Photos</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+      </nav>
+      <a href="#contact" class="cta">Get in touch</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" style="border-top:0">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="crumbs">Source<span>/</span>Drawer<span>/</span>Engineering<span>/</span>Entrepreneurship<span>/</span>Mrithula</div>
+          <h1>Mrithula <em>Vijay</em> Gnanadesikan</h1>
+          <p class="lede">
+            Computer Science Engineering student and BBA in Digital Business and Entrepreneurship.
+            I build software, run student ecosystems, and connect ideas across economics,
+            finance, public policy and AI.
+          </p>
+          <div class="logo-row">
+            <div class="logo-chip">
+              <img src="images/easwari-logo.png" alt="Easwari Engineering College logo" />
+            </div>
+            <div class="logo-chip">
+              <img src="images/iim-logo.png" alt="IIM Bangalore logo" />
+            </div>
+          </div>
+          <div class="actions">
+            <a href="#work" class="btn btn-primary">View selected work</a>
+            <a href="https://github.com/mrithulavj" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+            <span class="btn-dot" aria-hidden="true">&#8599;</span>
+          </div>
+        </div>
+
+        <div class="collage">
+          <div class="paper main">
+            <img src="images/interview.jpg" alt="Mrithula in an interview conversation" />
+          </div>
+          <div class="slip">
+            <small>Now</small>
+            <strong>Vice President</strong>
+            <span>E-Cell, SRM Group. Intern at Tringapps, hybrid, through Dec 2026.</span>
+          </div>
+          <div class="paper side">
+            <img src="images/speaking.jpg" alt="Mrithula speaking at a college event" />
+          </div>
+          <div class="callout">
+            <h3>Currently</h3>
+            <p>Leading entrepreneurship and innovation across a six-college ecosystem.</p>
+            <div class="meta">2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap stats">
+        <div class="stat s1"><strong>33K</strong><span>students in the E-Cell network</span></div>
+        <div class="stat s2"><strong>1,446</strong><span>alumni records, grown from 47</span></div>
+        <div class="stat s3"><strong>6</strong><span>colleges in the E-Cell ecosystem</span></div>
+        <div class="stat s4"><strong>2</strong><span>degrees running in parallel</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2>The <em>T-shaped</em> approach</h2>
+        </div>
+        <div>
+          <p>
+            I believe in building broad foundations across domains and going deep where my
+            interests are strongest. That shows up in my work: a nowcasting platform for
+            Tamil Nadu's economy, an AI-powered UX audit tool, and an agentic research workflow
+            for investment due diligence.
+          </p>
+          <p>
+            Most of my energy goes into the people side: training delegates, mentoring juniors,
+            growing networks and helping students turn ideas into something real.
+          </p>
+          <div class="teal-strip">
+            <span class="dial" aria-hidden="true"></span>
+            <span>Interests: economics, finance, geopolitics, public policy, applied AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <div class="wrap">
+        <div class="eyebrow">Leadership</div>
+        <p class="leadership-intro">Leading student communities, from ecosystems to classrooms.</p>
+
+        <div class="leaders">
+
+          <article class="leader featured">
+            <div class="leader-body">
+              <div class="leader-head">
+                <div>
+                  <h3>Vice President</h3>
+                  <div class="org">E-Cell, SRM Group of Institutions</div>
+                </div>
+                <span class="leader-when">Jul 2026 — Present</span>
+              </div>
+              <div class="metric">33K<small>students in the network across six colleges</small></div>
+              <ul>
+                <li>Lead entrepreneurship and innovation initiatives across the six-college ecosystem.</li>
+                <li>Focus on student ventures, industry connections and ideation.</li>
+                <li>Build a culture where students move from ideas to action.</li>
+              </ul>
+            </div>
+            <figure class="photo">
+              <img src="images/speaking.jpg" alt="Mrithula speaking at an Easwari Engineering College event" />
+              <figcaption>Speaking at Easwari Engineering College</figcaption>
+            </figure>
+          </article>
+
+          <article class="leader paper cyan paper-tilt-l">
+            <div class="leader-head">
+              <div>
+                <h3>Department Alumni Coordinator</h3>
+                <div class="org">Student Council, CSE Department</div>
+              </div>
+              <span class="leader-when">2025 — Present</span>
+            </div>
+            <ul>
+              <li>Grew the alumni database from 47 to 1,446 records.</li>
+              <li>Alumni &amp; Industry Connect Ambassador for the department.</li>
+            </ul>
+            <figure class="photo-card">
+              <img src="images/payanam-launch.jpg" alt="Payanam alumni podcast launch at the CSE inaugural ceremony" />
+              <figcaption>Payanam alumni podcast launch, CSE inaugural ceremony</figcaption>
+            </figure>
+          </article>
+
+          <article class="leader paper pink paper-tilt-r">
+            <div class="leader-head">
+              <div>
+                <h3>Under Secretary General, Training</h3>
+                <div class="org">Easwari MUN Society</div>
+              </div>
+              <span class="leader-when">Jul 2026 — Present</span>
+            </div>
+            <ul>
+              <li>Ran training sessions on MUN procedure and leadership.</li>
+              <li>Designed learning materials and mentored juniors on Rules of Procedure.</li>
+            </ul>
+            <figure class="photo-card">
+              <img src="images/usg-easwari.jpeg" alt="Easwari MUN Society Under Secretary General for Training" />
+              <figcaption>Easwari MUN Society, Training</figcaption>
+            </figure>
+          </article>
+
+          <article class="leader paper sand paper-tilt-l">
+            <div class="leader-head">
+              <div>
+                <h3>President</h3>
+                <div class="org">Paper &amp; Pulse, official magazine club</div>
+              </div>
+              <span class="leader-when">Aug 2026 — Present</span>
+            </div>
+            <ul>
+              <li>Lead the club's editorial direction and publications.</li>
+              <li>Previously Editorial Designer: layouts, graphics and visual content for the magazine and bulletin.</li>
+            </ul>
+          </article>
+
+          <article class="leader paper cyan paper-tilt-r">
+            <div class="leader-head">
+              <div>
+                <h3>Under Secretary General</h3>
+                <div class="org">Chettinad Hari Shree Vidyalayam MUN</div>
+              </div>
+              <span class="leader-when">May — Jun 2024</span>
+            </div>
+            <ul>
+              <li>Led the Design Department, owning the conference's visual identity and branding.</li>
+              <li>Managed delegate communications, registrations and the overall conference experience.</li>
+            </ul>
+          </article>
+
+          <article class="leader paper pink paper-tilt-l">
+            <div class="leader-head">
+              <div>
+                <h3>Office Bearer</h3>
+                <div class="org">Association of Computer Engineers (ACE)</div>
+              </div>
+            </div>
+            <ul>
+              <li>Part of the leadership team for the computer engineering association.</li>
+              <li>Logistics volunteer at ITNT / StartupTN UmagineTN 2026.</li>
+            </ul>
+            <figure class="photo-card">
+              <img src="images/umagine-team.jpg" alt="Student volunteer team at UmagineTN 2026" />
+              <figcaption>Volunteer team, UmagineTN 2026</figcaption>
+            </figure>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="wrap">
+        <div class="eyebrow">Selected work</div>
+        <div class="work">
+          <article class="card">
+            <div class="card-top"><span>01</span><span>Research</span></div>
+            <h3>ARTHA</h3>
+            <p>An economic nowcasting platform for Tamil Nadu, and my flagship research project.</p>
+            <span class="stamp">Flagship</span>
+            <div class="tags"><span>Economics</span><span>Data</span><span>Nowcasting</span></div>
+          </article>
+          <article class="card cyan">
+            <div class="card-top"><span>02</span><span>Product</span></div>
+            <h3>Prism</h3>
+            <img src="images/prism.png" alt="Prism UX audit platform" />
+            <p>An AI-powered UX audit platform built with React 19 and TypeScript.</p>
+            <div class="tags"><span>React 19</span><span>TypeScript</span><span>AI</span></div>
+          </article>
+          <article class="card pink">
+            <div class="card-top"><span>03</span><span>Agents</span></div>
+            <h3>Due Diligence Agent</h3>
+            <p>An agentic investment research workflow.</p>
+            <div class="tags"><span>Agents</span><span>Research</span><span>Finance</span></div>
+          </article>
+          <article class="card sand">
+            <div class="card-top"><span>04</span><span>Learning</span></div>
+            <h3>Thirukkural Platform</h3>
+            <img src="images/thirukural.png" alt="Thirukkural learning platform project" />
+            <p>A micro-learning platform connecting classical Tamil wisdom to modern disciplines.</p>
+            <div class="tags"><span>Edtech</span><span>Tamil</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><span>05</span><span>Fintech</span></div>
+            <h3>SyndiQ</h3>
+            <p>A multi-agent lending syndication concept built for the GIFT City Fintech Hackathon.</p>
+            <div class="tags"><span>Multi-agent</span><span>Lending</span></div>
+          </article>
+          <article class="card cyan">
+            <div class="card-top"><span>06</span><span>Case study</span></div>
+            <h3>NovaDrive Supply Chain</h3>
+            <img src="images/samanvay-certificates.jpg" alt="Two team members holding Certificates of Achievement at Samanvay 2026" />
+            <p>A supply-chain risk case for the Samanvay Consularium competition, with about 100 teams.</p>
+            <div class="tags"><span>Strategy</span><span>Risk</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="wrap">
+        <div class="gallery-intro">
+          <div class="gallery-title-wrap">
+            <div class="gallery-kicker">Field notes / 2026</div>
+            <h2 class="gallery-title">Out there, making <em>things happen.</em></h2>
+            <svg class="gallery-doodle" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+              <path d="M36 4l5.2 20.1L58 10.8 47.7 28.1 68 33l-20.3 5.2L58 56 41.2 45.7 36 68l-5.2-22.3L14 56l10.3-17.8L4 33l20.3-4.9L14 10.8l16.8 13.3L36 4z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="36" cy="34" r="5" fill="var(--yellow)"/>
+            </svg>
+          </div>
+          <div class="gallery-sticker"><strong>Out &amp;</strong> about<br />moments<br />collected</div>
+        </div>
+        <div class="gallery">
+          <figure class="g a" data-index="01">
+            <img src="images/payanam-launch.jpg" alt="Payanam launch ceremony" />
+            <figcaption>Payanam launch, CSE</figcaption>
+          </figure>
+          <figure class="g b" data-index="02">
+            <img src="images/umagine-group.jpg" alt="Volunteer group at UmagineTN 2026" />
+            <figcaption>Felicitated by the former IT Minister, UmagineTN 2026</figcaption>
+          </figure>
+          <figure class="g c" data-index="03">
+            <img src="images/samanvay-certificates.jpg" alt="Samanvay 2026 certificates" />
+            <figcaption>Samanvay 2026</figcaption>
+          </figure>
+          <figure class="g d" data-index="04">
+            <img src="images/umagine-team.jpg" alt="Student team at UmagineTN" />
+            <figcaption>Team, UmagineTN</figcaption>
+          </figure>
+          <figure class="g e" data-index="05">
+            <img src="images/interview.jpg" alt="Interview conversation" />
+            <figcaption>On set, interview</figcaption>
+          </figure>
+          <figure class="g f" data-index="06">
+            <img src="images/speaking.jpg" alt="Speaking at an event" />
+            <figcaption>Speaking, Easwari</figcaption>
+          </figure>
+          <figure class="g g" data-index="07">
+            <img src="images/podcast-rajesh.jpeg" alt="Podcast conversation with Rajesh" />
+            <figcaption>Podcast with Rajesh</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="wrap">
+        <div class="eyebrow">Certifications</div>
+        <div class="slips">
+          <article class="slip-card">
+            <span class="issuer">Vista Equity Partners</span>
+            <h4>Demystifying Private Equity</h4>
+            <span class="date">Issued Sep 2026</span>
+            <a href="https://www.linkedin.com/in/mrithulavijay/overlay/Certifications/684214001/treasury/?profileId=ACoAAF5Il7oBmPUsh9GMkaDa_h01kw91GSXAc50" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="slip-card y">
+            <span class="issuer">Coursera</span>
+            <h4>Investment Risk Management</h4>
+            <span class="date">Issued Jul 2026</span>
+            <a href="https://www.linkedin.com/in/mrithulavijay/overlay/Certifications/823264304/treasury/?profileId=ACoAAF5Il7oBmPUsh9GMkaDa_h01kw91GSXAc50" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="slip-card p">
+            <span class="issuer">Yale University</span>
+            <h4>Financial Markets</h4>
+            <span class="date">Issued Jun 2026</span>
+            <span class="id">Credential ID XKJ23HLKL90Z</span>
+            <a href="https://www.coursera.org/account/accomplishments/records/XKJ23HLKL90Z" target="_blank" rel="noopener">Show credential</a>
+          </article>
+          <article class="slip-card t">
+            <span class="issuer">JP Morgan Chase &amp; Co</span>
+            <h4>Quantitative Research</h4>
+            <span class="date">Issued Jun 2026</span>
+          </article>
+          <article class="slip-card">
+            <span class="issuer">Deloitte</span>
+            <h4>Data Analytics</h4>
+            <span class="date">Issued May 2026</span>
+            <a href="https://www.linkedin.com/in/mrithulavijay/overlay/Certifications/297686561/treasury/?profileId=ACoAAF5Il7oBmPUsh9GMkaDa_h01kw91GSXAc50" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="slip-card y">
+            <span class="issuer">Anthropic</span>
+            <h4>Introduction to Agent Skills</h4>
+            <span class="date">Issued Mar 2026</span>
+            <a href="http://verify.skilljar.com/c/w7wvkwe2d3y8" target="_blank" rel="noopener">Show credential</a>
+          </article>
+          <article class="slip-card p">
+            <span class="issuer">BCG X</span>
+            <h4>Introduction to Data for Decision Makers</h4>
+            <span class="date">Issued Dec 2025</span>
+            <span class="id">Credential ID Forage WbBDb3oLYPsi6Bxib</span>
+            <a href="https://www.linkedin.com/in/mrithulavijay/overlay/Certifications/1605880044/treasury/?profileId=ACoAAF5Il7oBmPUsh9GMkaDa_h01kw91GSXAc50" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="slip-card t">
+            <span class="issuer">Cisco Networking Academy</span>
+            <h4>Security and Connectivity</h4>
+            <span class="date">Issued Dec 2025</span>
+          </article>
+          <article class="slip-card">
+            <span class="issuer">Cisco Networking Academy</span>
+            <h4>Introduction to Modern AI</h4>
+            <span class="date">Issued Dec 2025</span>
+          </article>
+          <article class="slip-card y">
+            <span class="issuer">City of Moreton Bay</span>
+            <h4>Economic Development</h4>
+            <span class="date">Issued Jul 2025</span>
+            <span class="id">Credential ID Forage XrvQY9yzRAeuPujCT</span>
+          </article>
+          <article class="slip-card p">
+            <span class="issuer">Cisco Networking Academy</span>
+            <h4>HTML Essentials</h4>
+            <span class="date">Issued Sep 2025</span>
+          </article>
+          <article class="slip-card t">
+            <span class="issuer">Microsoft</span>
+            <h4>Explore Generative AI</h4>
+            <span class="date">Issued Sep 2025</span>
+            <a href="https://drive.google.com/file/d/1LAAg5cEE3MIv3PiaAN8Uky2AsBrNMqrT/view?usp=sharing" target="_blank" rel="noopener">Show credential</a>
+          </article>
+          <article class="slip-card">
+            <span class="issuer">Bank of America</span>
+            <h4>Global Markets Sales and Trading Analysis</h4>
+            <span class="date">Issued Jul 2025</span>
+            <span class="id">Credential ID Forage Pd2suzdN5WJnEjtN9</span>
+          </article>
+          <article class="slip-card y">
+            <span class="issuer">NSW Government</span>
+            <h4>Economic Analysis</h4>
+            <span class="date">Issued Jul 2025</span>
+            <span class="id">Credential ID Forage QEwsEzrLPxgEQyXsh</span>
+          </article>
+          <article class="slip-card p">
+            <span class="issuer">University of Illinois Urbana-Champaign</span>
+            <h4>Financial Accounting: Foundations</h4>
+            <span class="date">Issued Aug 2025</span>
+            <a href="https://www.coursera.org/account/accomplishments/certificate/JMHAFMA5YGCC" target="_blank" rel="noopener">Show credential</a>
+          </article>
+          <article class="slip-card t">
+            <span class="issuer">University of Michigan</span>
+            <h4>Programming for Everybody (Python)</h4>
+            <span class="date">Issued Jun 2025</span>
+            <a href="https://www.coursera.org/account/accomplishments/certificate/4WZ0F2E8K9FJ" target="_blank" rel="noopener">Show credential</a>
+          </article>
+          <article class="slip-card">
+            <span class="issuer">University of Michigan</span>
+            <h4>Python Data Structures</h4>
+            <span class="date">Issued Jul 2025</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="eyebrow">Experience</div>
+        <div class="timeline">
+          <div class="row">
+            <div class="when">Jul 2026 — Present</div>
+            <div>
+              <h4><span class="dot" style="background:var(--yellow)"></span>Vice President</h4>
+              <div class="org">E-Cell, SRM Group of Institutions</div>
+            </div>
+            <div class="where">Entrepreneurship and innovation across a six-college ecosystem</div>
+          </div>
+          <div class="row">
+            <div class="when">Aug 2026 — Present</div>
+            <div>
+              <h4><span class="dot" style="background:var(--red)"></span>President</h4>
+              <div class="org">Paper &amp; Pulse, Easwari Engineering College</div>
+            </div>
+            <div class="where">Leading the official magazine club</div>
+          </div>
+          <div class="row">
+            <div class="when">Aug 2025 — Aug 2026</div>
+            <div>
+              <h4><span class="dot" style="background:var(--paper-cyan)"></span>Editorial Designer</h4>
+              <div class="org">Paper &amp; Pulse, Easwari Engineering College</div>
+            </div>
+            <div class="where">Layouts, graphics and visual content</div>
+          </div>
+          <div class="row">
+            <div class="when">Jul 2026 — Present</div>
+            <div>
+              <h4><span class="dot" style="background:var(--blue)"></span>Under Secretary General (Training)</h4>
+              <div class="org">Easwari MUN Society</div>
+            </div>
+            <div class="where">MUN procedure and leadership training</div>
+          </div>
+          <div class="row">
+            <div class="when">Jun 2026 — Present</div>
+            <div>
+              <h4><span class="dot" style="background:var(--teal-light)"></span>Intern</h4>
+              <div class="org">Tringapps (hybrid)</div>
+            </div>
+            <div class="where">Through December 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <div class="eyebrow" style="margin-bottom:1.5rem;color:#cfe0ff">Contact</div>
+            <h2>Let's build something <em>useful</em>.</h2>
+            <p>Open to conversations about student ecosystems, research tools, product work and the intersection of economics and technology.</p>
+          </div>
+          <nav class="links" aria-label="Contact links">
+            <a href="mailto:mrithula.vj@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/mrithulavijay" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/mrithulavj" target="_blank" rel="noopener">GitHub</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="wrap">
+    <footer>
+      <span>© 2026 Mrithula Vijay Gnanadesikan</span>
+      <span>Chennai, India</span>
+    </footer>
+  </div>
+
+</body>
+</html>
